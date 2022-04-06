@@ -5,13 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-<h1>
-    Text
-</h1>
-<div th:insert="header :: header"></div>
-<div th:each="car : ${cars}">
-    <span th:text="${car}"></span>
+<div th:each="customer : ${customers}">
+    <span th:text="${customer}"></span>
 </div>
-<div th:insert="footer :: footer"></div>
 </body>
 </html>
