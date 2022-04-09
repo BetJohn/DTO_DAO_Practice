@@ -1,12 +1,13 @@
 package com.example.demo.repository;
 
-import com.example.demo.dao.CustomerDAO;
 import com.example.demo.model.Customer;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface CustomerRepository extends CrudRepository <CustomerDAO, Integer>{
-    Iterable<Customer> getAllByUsername(String username);
-    Iterable<Customer> getAllByCity(String city);
-    Iterable<Customer> getAllByCountry(String country);
+import java.util.List;
 
+@Repository
+public interface CustomerRepository extends CrudRepository <Customer, Integer>{
+    public Customer getById(Integer Id);
+    public Customer getByUsername(String username);
 }
